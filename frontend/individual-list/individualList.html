@@ -1,0 +1,7 @@
+<h1>Netdeal</h1>
+<individual-form update-list="$ctrl.updateList()"></individual-form>
+<p>Individual Selected: {{$ctrl.getIndividualSelected().name || "No Individual Selected"}}</p>
+<individual-detail 
+    ng-repeat="individual in $ctrl.list" 
+    individual="individual"
+></individual-detail>

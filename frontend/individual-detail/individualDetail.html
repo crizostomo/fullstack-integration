@@ -1,0 +1,19 @@
+<div class="individual-details" 
+    ng-click="$ctrl.onSelect($ctrl.individual)"
+    ng-class="$ctrl.isSelected() ? 'checked' : ''"    
+>
+    <div class="individual-details-info">
+        {{$ctrl.individual.name}}  
+    </div>
+    <div>
+        <score score="$ctrl.individual.score"></score>
+    </div>
+    
+
+</div>
+<div style="margin-left: 20px;" ng-if="$ctrl.individual.subIndividuals.length > 0">
+    <individual-detail 
+        ng-repeat="subIndividual in $ctrl.individual.subIndividuals" 
+        individual="subIndividual"
+    ></individual-detail>
+</div>

@@ -1,0 +1,11 @@
+<form class="person-form" novalidate>
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" ng-model="$ctrl.user.name">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" ng-model="$ctrl.user.password">
+    </div>
+    <button ng-click="$ctrl.save()">Save</button>
+</form>
