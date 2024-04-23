@@ -33,7 +33,7 @@ class IndividualServiceImplTest {
         individual.setName("John");
         individual.setPassword("pass");
         individual.setScore(100);
-        individual.setIndividualParent(null);
+        individual.setParentIndividual(null);
         individuals.add(individual);
 
         Individual individual1 = new Individual();
@@ -41,7 +41,7 @@ class IndividualServiceImplTest {
         individual1.setName("Jane");
         individual1.setPassword("password");
         individual1.setScore(90);
-        individual1.setIndividualParent(null);
+        individual1.setParentIndividual(null);
         individuals.add(individual1);
 
         Mockito.when(individualRepository.findByParentIndividualIsNull()).thenReturn(individuals);
@@ -59,7 +59,7 @@ class IndividualServiceImplTest {
         expectedIndividual.setName("John");
         expectedIndividual.setPassword("pass");
         expectedIndividual.setScore(100);
-        expectedIndividual.setIndividualParent(null);
+        expectedIndividual.setParentIndividual(null);
 
         Mockito.when(individualRepository.findById(id)).thenReturn(Optional.of(expectedIndividual));
 
@@ -74,14 +74,14 @@ class IndividualServiceImplTest {
         individual.setName("John");
         individual.setPassword("pass");
         individual.setScore(100);
-        individual.setIndividualParent(null);
+        individual.setParentIndividual(null);
 
         Individual savedIndividual = new Individual();
         savedIndividual.setId(1L);
         savedIndividual.setName("John");
         savedIndividual.setPassword("encoded_pass");
         savedIndividual.setScore(100);
-        savedIndividual.setIndividualParent(null);
+        savedIndividual.setParentIndividual(null);
 
         Mockito.when(individualRepository.save(individual)).thenReturn(savedIndividual);
 

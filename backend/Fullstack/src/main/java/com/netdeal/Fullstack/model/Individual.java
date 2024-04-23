@@ -50,10 +50,10 @@ public class Individual implements Serializable {
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
-    private Individual individualParent;
+    private Individual parentIndividual;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "individualParent", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "parentIndividual", cascade = CascadeType.ALL)
     private List<Individual> subIndividuals;
 
     public void addSubPerson(Individual subIndividual) {

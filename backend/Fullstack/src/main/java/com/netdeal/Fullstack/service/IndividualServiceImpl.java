@@ -37,7 +37,7 @@ public class IndividualServiceImpl implements IndividualService {
         Individual databaseIndividual = getIndividualById(id);
         databaseIndividual.setScore(calculatePasswordScore(newIndividual.getPassword()));
         databaseIndividual.setPassword(PasswordEncryption.encode(newIndividual.getPassword()));
-        databaseIndividual.setIndividualParent(newIndividual.getIndividualParent());
+        databaseIndividual.setParentIndividual(newIndividual.getParentIndividual());
         Individual result = individualRepository.save(newIndividual);
         return result;
     }
